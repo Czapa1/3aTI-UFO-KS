@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_controler : MonoBehaviour
 {
     Rigidbody2D rb2d;
+    public float speed;
     
     void Start()
     {
@@ -21,7 +22,7 @@ public class Player_controler : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rb2d.AddForce(movement);
+        rb2d.AddForce(movement*speed);
     }
 }
 
